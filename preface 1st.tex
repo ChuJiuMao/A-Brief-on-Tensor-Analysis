@@ -1,0 +1,20 @@
+\chapter*{第一版序言}
+我本科的时候，曾作为带薪实习学生\footnote{译者注：原文为co-op student}在北美航空公司工作，那是我就在学一些有关张量分析的东西了。在MIT的航空工程系，我学习了经典力学的入门课程，它给我留下了深刻的印象，以至于直到今天当我看飞机飞行，尤其是转弯时，我都会想象它身上插满矢量。在课程快结束的时候，我们的教授说，如果我们将飞机视作一个刚体，那么就会出现一个神秘但相当简单的积分集合，它是惯性张量的一个部分。张量，这两个字强而有力。曾几何时，我在材料力学课上坐在前排，听一位研究生导师与大佬的闲聊中提到，“书上说的所谓‘应力’其实就是个张量……”
+
+一方面是因为这两次经历勾起了我的兴趣，另一方面，我也总算从繁杂的课程中抽出时间，于是我开始准备第一次认真的自学张量分析。几次尝试过后，我在洛杉矶的一家商店里发现了一本有关张量分析的书。我在脑海中想过这样的场景：一个研究生或是教授发现我在看张量分析的书，他们或许会说，“你一个本科生，看什么张量分析？”幸好，这本书有一个灰色的护封。我躲进我的房间，立刻看起了张量的定义：“二阶张量是一个根据相应规则进行变换的$n^2$个对象的集合……”然后就是一堆不可名状的上标、下标、上划线\footnote{译者注：原文为overbar，即$\overline{\mathrm{A}}$}和偏导数。真是一个教学的灾难！那些简洁、优雅的黑体符号，那些我很容易理解的箭头，它们之间到底有啥关系？
+
+我到研究生毕业才搞明白它们之间的关系。但是我希望，通过这本书，作为本科生的你可以跨过我曾经跌倒的那道坎。在这本书里你会发现，我用了将近三章的内容为你接受张量变换公式做铺垫。我没有选择扔掉张量变换公式，因为它是张量分析中最重要的公式。不过，我会早在第一章不到一半的地方就开始说明二阶张量是什么---一个将矢量转换成矢量的线性算子。如果你将应力张量作用于通过物体某一点的平面的单位法矢，你就可以得到应力矢量，即作用于该点的平面上的力面积密度。（单位法矢中的应力矢量天然是线性的，即应力张量存在；相比之下，非线性往往才是认为规定的。）在此简洁的定义之下，二阶张量就仿佛是一台暴露出内部结构的磨削机，它将纷繁复杂的指标全部磨去棱角。如果没有这台机器，除了最简单的情况，我们几乎不可能得到任何数值结果。
+
+这本书分为两部分：代数和微积分。上半部分的前半部分（第一章）强调的是概念。这一部分中，我力求将矢量的数学概念与物理概念联系起来，这一方面我很感谢Hoffman那本耐人寻味的小书《About Vector》（Dover, 1975）（但在有些地方我们也有分歧，我不同意他关于矢量不能代表有限旋转的观点）。第二章主要讨论在一般基上表示与处理矢量和张量的指标工具。第三章，我们将通过牛顿运动定律来介绍活动标架法\footnote{译者注：原文为moving frame}与Christoffel 符号。为了有助于同时记住基本的运动学思想以及它们的一般化张量，我列出了若干对偶形式的方程，这是我在课堂上发现的一个好办法。最后一章将从一个普通的梯度的例子开始，一路推导至协变导数。贯穿整章的是连续介质力学的应用。尽管它的基本方程（不包括电磁学）早在19世纪中叶就已经很完善了，但是广义相对论的出现使得张量分析为这个古老的领域注入新的活力。（在我的专业领域------壳理论中，张量分析直到20世纪40年代才出现在苏联文献中，尽管曲面的基本理论及其张量描述对理解广义相对论至关重要。）
+
+我没有列出梯度、散度和旋度在各种坐标系中的表达式。这些有用的公式可以在《数学物理特殊函数的公式与定理》\footnote{\href{https://sci-hub.wf/10.1007/978-3-662-11761-3}{Magnus, Oberhettinger, and Soni, Formulas and Theorems for the Special Functions of Mathematical Physics},3rd enlarged edition, Chapter XII, Springer-Verlag 1966}第12章或《积分大典》\footnote{\href{https://www.sciencedirect.com/book/9780122947575/table-of-integrals-series-and-products}{Gradshteyn and Ryzhik, Tables of Integrals, Series and Products },4th edition, corrected and enlarged, Academic Press, 1980，\href{https://www.aliyundrive.com/s/sAoaurDpzUX}{阿里云}}中找到。
+
+幸好，现在可以通过编程做符号处理，让计算机来完成在特定坐标系中展开方程、验证方案的苦差事。有兴趣的读者可以参考《物理教育中的计算机符号数学》\footnote{\href{https://sci-hub.hkvisa.net/10.1119/1.12634}{"Computer Symbolic Math in Physics Education" }by D. R. Stoutemyer, Am. J. Phys., vol. 49 (1981), pp. 85-88}或是《广义相对论与引力》\footnote{"A Review of Algebraic Computing in General Relativity," by R. A. d'lnverno, Chapter 16 of \href{https://www.scribd.com/document/447349955}{General Relativity and Gravitation}, vol. 1, ed. A. Held, Plenum Press, N.Y. and London, 1980，\href{https://www.aliyundrive.com/s/zuUnV57sbvT}{阿里云}}
+
+在此我要对我三位朋友的帮助表示感谢：马克-杜瓦（Mark Duva），一个我以前的学生，他的随和与深刻让我能在课堂上无所顾忌；布鲁斯-沙特尔（Bruce Chartres），他的聪明才智帮我审阅了本书的大部分内容；恩斯特-苏德克（Ernst Soudek），尽管他不是母语者，但他以敏锐的英语听力帮助我调整了最终的手稿。
+
+最后，我感谢卡罗琳-杜普雷（Carolyn Duprey）和露丝-尼斯利（Ruth Nissley），他们敲出了原稿，然后以耐心和良好的幽默感，重新处理了数百处细节问题。
+
+{\rightline{${}$}}
+
+\rightline{JAMES G. SIMMONDS}

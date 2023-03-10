@@ -1,0 +1,87 @@
+\section{二阶张量的笛卡尔坐标}
+如果我们让$\bb{T}$作用于任何用笛卡尔坐标系表示的矢量$\bb{v}$，二阶张量$\bb{T}$的笛卡尔坐标都会自动消失。因此，根据$\bb{T}$的线性性
+\begin{align}\label{equ:1.36}
+	\bb{Tv}&=\bb{T}\left( v_x\bf{e}_x+v_y\bf{e}_y+v_z\bf{e}_z \right)\nonumber\\
+	&=v_x\bb{T}\bf{e}_x+v_y\bb{T}\bf{e}_y+v_z\bb{T}\bf{e}_z
+\end{align}
+而$\bb{T}\bf{e}_x$、$\bb{T}\bf{e}_y$和$\bb{T}\bf{e}_z$是矢量，因此它们可以用笛卡尔坐标系表示，我们将之标记如下
+\begin{align}
+	\bb{T}\bf{e}_x&=T_{xx}\bf{e}_x+T_{yx}\bf{e}_y+T_{zx}\bf{e}_z\label{equ:1.37}\\
+	\bb{T}\bf{e}_y&=T_{xy}\bf{e}_x+T_{yy}\bf{e}_y+T_{zy}\bf{e}_z\label{equ:1.38}\\
+	\bb{T}\bf{e}_z&=T_{xz}\bf{e}_x+T_{yz}\bf{e}_y+T_{zz}\bf{e}_z\label{equ:1.39}
+\end{align}
+这九个系数$T_{xx},T_{xy},\dots,T_{zz}$被称作$\bb{T}$的笛卡尔坐标。我们将它写作$\bb{T}\sim T$，其中$\bb{T}^{\mathrm{T}}$表示式\eqref{equ:1.37}到式\eqref{equ:1.39}中出现的系数矩阵。
+
+可以用下面的方法确定下标：从式\eqref{equ:1.37}到式\eqref{equ:1.39}，$T_{xx}=\bf{e}_x\cdot \bb{T}\bf{e}_x , T_{xy}=\bf{e}_x\cdot \bb{T}\bf{e}_y$，依此类推。
+
+\begin{example}
+	确定例题1.4中定义的张量$\bb{T}$的笛卡尔坐标。
+\end{example}
+\begin{solution}
+	将$\bb{T}$分别用于$\bf{e}_x,\bf{e}_y,\bf{e}_z$，我们得到
+	\begin{equation*}
+		\begin{matrix}
+			\begin{aligned}
+			\bb{T}\bf{e}_x\sim &\left( -2,0,1 \right) &&=\\
+			\bb{T}\bf{e}_y\sim &\left( 0,0,2 \right) &&=\\
+			\bb{T}\bf{e}_z\sim &\left( 3,-1,0 \right) &&=\\
+		\end{aligned}&		\begin{aligned}
+			-2&\left( 1,0,0 \right)\\
+			\\
+			3&\left( 1,0,0 \right)\\
+		\end{aligned}&		\begin{array}{c}
+			\\
+			\\
+			-\left( 0,1,0 \right)\\
+		\end{array}&		\begin{aligned}
+			+&\left( 0,0,1 \right)\\
+			+2&\left( 0,0,1 \right)\\
+			\\
+		\end{aligned}\\
+		\end{matrix}
+	\end{equation*}
+	因此
+	\begin{equation*}
+		\bb{T}\sim \left[ \begin{matrix}
+			-2&		0&		1\\
+			0&		0&		2\\
+			3&		-1&		0\\
+		\end{matrix} \right] 
+	\end{equation*}
+\end{solution}
+
+\begin{example}
+	如果$\bb{u}\sim \left( u_x,u_y,u_z \right) $，那么$\bb{u}\times $可以被视为二阶张量，它对于任意矢量$\bb{v}\sim \left( v_x,v_y,v_z \right) $的作用由式\eqref{equ:1.24}定义。请给出$\bb{u}\times $的笛卡尔坐标。
+\end{example}
+\begin{solution}
+	让$\bb{u}\times $分别对$\bf{e}_x$、$\bf{e}_y$和$\bf{e}_z$作用，根据式\eqref{equ:1.24}我们可以得到
+	\begin{equation*}
+		\begin{matrix}
+			\begin{aligned}
+			\bb{u}\times \bf{e}_x\sim &\left( 0,u_z,-u_y \right) =\\
+			\bb{u}\times \bf{e}_y\sim &\left( -u_z,0,u_x \right) =\\
+			\bb{u}\times \bf{e}_z\sim &\left( u_y,-u_x,0 \right) =\\
+		\end{aligned}&		\begin{aligned}
+			\\
+			-u_z&\left( 1,0,0 \right)\\
+			u_y&\left( 1,0,0 \right)\\
+		\end{aligned}&		\begin{aligned}
+			u_z&\left( 0,1,0 \right)\\
+			\\
+			-u_x&\left( 0,1,0 \right)\\
+		\end{aligned}&		\begin{aligned}
+			-u_y&\left( 0,0,1 \right)\\
+			+u_x&\left( 0,0,1 \right)\\
+			\\
+		\end{aligned}\\
+		\end{matrix}
+	\end{equation*}
+	因此
+	\begin{equation*}
+		\bb{u}\times \sim \left[ \begin{matrix}
+			0&		u_z&		-u_y\\
+			-u_z&		0&		u_x\\
+			u_y&		-u_x&		0\\
+		\end{matrix} \right] 
+	\end{equation*}
+\end{solution}

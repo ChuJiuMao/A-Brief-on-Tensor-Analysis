@@ -1,0 +1,27 @@
+%引入设置
+\input{./setting.tex}
+
+
+\begin{document}
+    \includepdf{cover.pdf}
+    % \includepdf{PersonalCover.pdf}
+    \includepdf{intro.pdf}
+
+    \frontmatter
+    \input{译者序.tex}
+    \input{acknowledge.tex}
+    \input{preface 2rd.tex}
+    \input{preface 1st.tex}
+
+    \tableofcontents
+    
+    \mainmatter
+    \input{./chapter/chapter1/chapter1.tex}
+    \input{./chapter/chapter2/chapter2.tex}
+     
+    \appendix
+    % \printindex
+
+    \includepdf{Coverback.pdf}
+    % \includepdf{PersonalCoverback.pdf}
+\end{document}

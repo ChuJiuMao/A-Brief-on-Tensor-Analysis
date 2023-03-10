@@ -1,0 +1,98 @@
+\documentclass[oneside,heading = true,12pt,openany]{ctexbook}
+
+%需要大段设置的宏包
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black}
+
+\ctexset {
+    section/numbering = false,
+    chapter = {
+        beforeskip = 0pt,
+        fixskip = true,
+        format = \zihao{1},
+        titleformat = \zihao{0},
+        name = {第,章},
+        nameformat = \vspace{-0.4cm}\rule{\linewidth}{2bp}\kaishu\\,
+        aftername = \vspace{-2.1cm}\par\medskip\rule{\linewidth}{2bp}\vspace{0.4cm}\kaishu\\,
+        pagestyle = plain,
+    },
+    section = {
+        format = \raggedright\zihao{2},
+        name = {第,节},
+        number = \chinese{section},
+    }
+}
+
+
+\usepackage{geometry}
+\geometry{
+    paperwidth=7.5in, 
+    paperheight=10in,
+    margin=16mm,
+    headheight=2.17cm,
+    footskip=8mm
+}
+
+%无需或仅需少量设置的宏包
+\usepackage{amsmath,amsfonts,graphicx,caption,mathtools,amssymb,enumerate,pdfpages,arydshln,makeidx,tikz,fontspec,fancyhdr}
+\usepackage[mathscr]{eucal}
+\usepackage[allcommands]{overarrows}
+\NewOverArrowCommand{overrightharpoon}{%
+end=\rightharpoonup
+}
+
+\pagestyle{fancy}
+
+%新命令
+\newcommand\bb[1]{\boldsymbol{#1}}%斜体加粗
+\renewcommand\bf[1]{\mathbf{#1}}%正体加粗
+\newcommand\rr[1]{\overrightharpoon{#1}}%半箭头
+\newcommand\qed{\rightline{$\square$}}%证毕符号
+\newcommand\extrainfo[1]{{\small\kaishu{#1}\vspace{0.4in}}}%章前谶言
+\newcommand\degree{^{\circ}}%角度符号
+\newcommand\tr{\mathrm{tr}~}%迹符号
+
+
+%新环境
+
+%例题环境
+\newcounter{ExampleCounter}
+\counterwithin*{ExampleCounter}{chapter}
+\newenvironment{example}
+	{\stepcounter{ExampleCounter}
+	\begin{description}
+		\item[例题~\thechapter.\theExampleCounter]
+	}{\end{description}
+	}
+
+%解答环境
+\newenvironment{solution}
+	{\begin{description}
+		\item[解：]
+	}{\end{description}
+	}
+
+%章末练习环境
+\newcounter{ExerciseCounter}
+\counterwithin*{ExerciseCounter}{chapter}
+\newenvironment{exercise}
+    {\stepcounter{ExerciseCounter}
+    \section{练习}
+    \begin{enumerate}[\thechapter.1.]
+    }{\end{enumerate}
+    }
+
+%证明：环境
+\newenvironment{proof}
+	{\begin{description}
+		\item[证明：]
+	}{
+        
+        \qed
+        \end{description}
+	}
+
+
+

@@ -1,0 +1,28 @@
+\section{简化点积在一般基上的分量形式}
+
+让我们回到“简化$\bb{u}\cdot \bb{v}$的分量展开式”的问题。当我们用相同的基底写出式\eqref{equ:2.3}的展开式形式时，写出来会十分繁琐。但如果我们设$\bb{u}=u^i\bb{g}_i$而$\bb{v}=v_j\bb{g}^j$，那么
+\begin{equation}\label{equ:2.9}
+    \bb{u}\cdot \bb{v}=u^iv_j\bb{g}_i\cdot \bb{g}^j=u^iv_j\delta _{i}^{j}=u^1v_1+u^2v_2+u^3v_3
+\end{equation}
+这个过程可比引入$\bb{u}$和$\bb{v}$笛卡尔坐标简单多了。当然我们还有一种选择，设$\bb{u}=u_i\bb{g}^i$，$\bb{v}=v^j\bb{g}_j$，那么
+\begin{equation}\label{equ:2.10}
+    \bb{u}\cdot \bb{v}=u_iv^i
+\end{equation}
+
+\begin{example}
+    给定$\bb{u}=2\bb{g}_1-\bb{g}_2+4\bb{g}_3$以及$\bb{w}=-3\bb{g}^1+2\bb{g}^2-2\bb{g}^3$，计算$\bb{u}\cdot \bb{v}$，$\bb{w}\cdot \bb{v}$和$\bb{u}\cdot \bb{w}$，其中$\bb{v}$分别采用例题2.3的底基矢量和例题2.1中的顶基矢量。
+\end{example}
+\begin{solution}
+    $\bb{u}$的顶分量已知，$\bb{v}$的底分量由例题2.3给出。因此，根据式\eqref{equ:2.9}
+    \begin{equation*}
+        \bb{u}\cdot \bb{v}=\left( 2 \right) \left( 12 \right) +\left( -1 \right) \left( 9 \right) +\left( 4 \right) \left( -3 \right) 
+    \end{equation*}
+    $\bb{w}$的底分量已知，$\bb{v}$的顶分量由例题2.1给出。因此，根据式\eqref{equ:2.10}
+    \begin{equation*}
+        \boldsymbol{w}\cdot \boldsymbol{v}=\left( -3 \right) \left( 2 \right) +\left( 2 \right) \left( 3 \right) +\left( -2 \right) \left( -1 \right) =2
+    \end{equation*}
+    最终，根据式\eqref{equ:2.9}
+    \begin{equation*}
+        \boldsymbol{u}\cdot \boldsymbol{w}=\left( 2 \right) \left( -3 \right) +\left( -1 \right) \left( 2 \right) +\left( 4 \right) \left( -2 \right) =-16
+    \end{equation*}
+\end{solution}

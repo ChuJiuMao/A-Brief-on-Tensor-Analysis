@@ -1,0 +1,91 @@
+\section{基底变换}
+
+在给定的参考系内，矢量和张量是完全不知道我们会选择什么基底来表示它们。换言之，它们是几何不变量。 在改变基底的情况下，改变的是它们的分量，而不是它们本身。张量分析的一个主要目的是给出基底变换后从原来的分量计算出新分量的方法。
+
+为了给出变换公式，让我们先假设新基底的每个基矢量都是旧基矢量的已知线性组合，例如
+\begin{equation}\label{equ:2.29}
+    \tilde{\boldsymbol{g}}_1=A_{1}^{1}\boldsymbol{g}_1+A_{1}^{2}\boldsymbol{g}_2+A_{1}^{3}\boldsymbol{g}_3,\tilde{\boldsymbol{g}}_2=A_{2}^{1}\boldsymbol{g}_1+\cdots ,\tilde{\boldsymbol{g}}_3=\cdots 
+\end{equation}
+我们可以用矩阵或指标\footnote{指标形式相较于矩阵形式的一个优点是它的乘法是无序的。因此$\left( A^{-1} \right) _{j}^{i}\tilde{\boldsymbol{g}}_i=\tilde{\boldsymbol{g}}_i\left( A^{-1} \right) _{j}^{i}$，但是通常来讲，$\widetilde{G}A^{-1}\ne A^{-1}\widetilde{G}$}将式\eqref{equ:2.29}总结如下
+\begin{equation}\label{equ:2.30}
+    \widetilde{G}=GA\,\, \text{或} \,\, \tilde{\boldsymbol{g}}_j=A_{j}^{i}\boldsymbol{g}_i
+\end{equation}
+我们需要给出式\eqref{equ:2.30}的逆变换式以及新旧倒易基底类似的变换式。因为\linebreak$\det \widetilde{G}=\left( \det G \right) \left( \det A \right) $并且$\left\{ \boldsymbol{g}_i \right\} $和$\left\{ \tilde{\boldsymbol{g}}_i \right\} $是基底，$\det A\ne 0$。所以$A^{-1}=\left[ \left( A^{-1} \right) _{j}^{i} \right] $存在，也因此，根据式\eqref{equ:2.30}
+\begin{equation}\label{equ:2.31}
+    G=\widetilde{G}A^{-1}\,\, \text{或} \,\, \boldsymbol{g}_j=\left( A^{-1} \right) _{j}^{i}\tilde{\boldsymbol{g}}_i
+\end{equation}
+进一步地，我们知道若矩阵$B$可以右乘矩阵$C$，那么矩阵$BC$的每一行都是$C$的行的线性组合，我们有
+\begin{align}
+	\widetilde{G}^{-1}=A^{-1}G^{-1}&\text{或} \,\, \tilde{\boldsymbol{g}}^i=\left( A^{-1} \right) _{j}^{i}\boldsymbol{g}^j\label{equ:2.32}\\
+	G^{-1}=A\widetilde{G}^{-1}&\text{或} \,\, \boldsymbol{g}^j=A_{j}^{i}\tilde{\boldsymbol{g}}^j\label{equ:2.33}
+\end{align}
+任意一个矢量$\bb{v}$新旧分量之间的变换关系立马随之而来，因为
+\begin{equation}\label{equ:2.34}
+    \tilde{v}_j=\tilde{\boldsymbol{g}}_j\cdot \boldsymbol{v}=A_{j}^{i}\boldsymbol{g}_i\cdot \boldsymbol{v}\,\, ,  \tilde{v}^i=\tilde{\boldsymbol{g}}^i\cdot \boldsymbol{v}=\left( A^{-1} \right) _{j}^{i}\boldsymbol{g}^j\cdot \boldsymbol{v}
+\end{equation}
+也即
+\begin{equation}\label{equ:2.35}
+    \tilde{v}_j=A_{j}^{i}v_i\,\, ,  \tilde{v}^i=\left( A^{-1} \right) _{j}^{i}v^j
+\end{equation}
+同样，对于任意二阶张量$\bb{T}$
+\begin{equation}\label{equ:2.36}
+    \begin{array}{c}
+        \widetilde{T}_{ij}=\tilde{\boldsymbol{g}}_i\cdot \boldsymbol{T}\tilde{\boldsymbol{g}}_j=A_{i}^{k}\boldsymbol{g}_k\cdot \boldsymbol{T}A_{j}^{p}\boldsymbol{g}_p,\quad \widetilde{T}_{\cdot j}^{i}=\tilde{\boldsymbol{g}}^i\cdot \boldsymbol{T}\tilde{\boldsymbol{g}}_j=\left( A^{-1} \right) _{k}^{i}\boldsymbol{g}^k\cdot \boldsymbol{T}A_{j}^{p}\boldsymbol{g}_p\\
+        \widetilde{T}_{j}^{\cdot i}=\tilde{\boldsymbol{g}}_j\cdot \boldsymbol{T}\tilde{\boldsymbol{g}}^i=A_{j}^{k}\boldsymbol{g}_k\cdot \boldsymbol{T}\left( A^{-1} \right) \boldsymbol{g}^p,\quad \widetilde{T}^{ij}=\tilde{\boldsymbol{g}}^i\cdot \boldsymbol{T}\tilde{\boldsymbol{g}}^j=\left( A^{-1} \right) _{k}^{i}\boldsymbol{g}^k\cdot \boldsymbol{T}\left( A^{-1} \right) _{p}^{j}\tilde{\boldsymbol{g}}^p\\
+    \end{array}
+\end{equation}
+也即
+\begin{equation}\label{equ:2.37}
+    \begin{array}{c}
+        \widetilde{T}_{ij}=A_{i}^{k}A_{j}^{p}T_{kp},\quad \widetilde{T}_{\cdot j}^{i}=\left( A^{-1} \right) _{k}^{i}A_{j}^{p}T_{\cdot p}^{k}\\
+        \widetilde{T}_{j}^{\cdot i}=A_{j}^{k}\left( A^{-1} \right) T_{k}^{\cdot p},\quad \widetilde{T}^{ij}=\left( A^{-1} \right) _{k}^{i}\left( A^{-1} \right) _{p}^{j}T^{kp}\\
+    \end{array}
+\end{equation}
+
+\begin{example}
+    若
+    \begin{equation*}
+        A=\left[ \begin{matrix}
+            1&		2&		1\\
+            2&		1&		0\\
+            -1&		0&		1\\
+        \end{matrix} \right] \text{而}\left( v^1,v^2,v^3 \right) =\left( 2,3,-1 \right) 
+    \end{equation*}
+    请写出$\left( \tilde{v}^1,\tilde{v}^2,\tilde{v}^3 \right) $
+\end{example}
+\begin{solution}
+    利用行变换，我们可以得到
+    \begin{equation*}
+        A^{-1}=\left[ \begin{matrix}{r}
+            -\frac{1}{2}&		1&		\frac{1}{2}\\
+            1&		-1&		-1\\
+            -\frac{1}{2}&		1&		\frac{3}{2}\\
+        \end{matrix} \right] 
+    \end{equation*}
+    因此，根据式\eqref{equ:2.35}的2式
+    \begin{align*}
+        &\tilde{v}^1=\left( -\frac{1}{2} \right) (2)+(1)(3)+\left( \frac{1}{2} \right) (-1)=\frac{3}{2}\\
+        &\tilde{v}^2=(1)(2)+(-1)(3)+(-1)(-1)=0\\
+        &\tilde{v}^3=\left( -\frac{1}{2} \right) (2)+(1)(3)+\left( \frac{3}{2} \right) (-1)=\frac{1}{2}
+    \end{align*}
+\end{solution}
+
+\begin{example}
+    利用例题2.7中定义的变换矩阵$A$计算$\widetilde{T}_{21}$和$\widetilde{T}_{2}^{\cdot 3}$，其中$\bb{T}$由例题2.6定义。
+\end{example}
+\begin{solution}
+根据式\eqref{equ:2.37}的1,3式我们有
+\begin{align*}
+	\widetilde{T}_{21}&=A_{2}^{1}\left( A_{1}^{1}T_{11}+A_{1}^{2}T_{12}+A_{1}^{3}T_{13} \right)\\
+	&+A_{2}^{2}\left( A_{1}^{1}T_{21}+A_{1}^{2}T_{22}+A_{1}^{3}T_{23} \right)\\
+	&+A_{2}^{3}\left( A_{1}^{1}T_{31}+A_{1}^{2}T_{32}+A_{1}^{3}T_{33} \right)\\
+	\widetilde{T}_{2}^{3}&=A_{2}^{1}\left[ \left( A^{-1} \right) _{1}^{3}T_{1}^{\cdot 1}+\left( A^{-1} \right) _{2}^{3}T_{1}^{\cdot 2}+\left( A^{-1} \right) _{3}^{3}T_{1}^{\cdot 3} \right]\\
+	&+A_{2}^{2}\left[ \left( A^{-1} \right) _{1}^{3}T_{2}^{\cdot 1}+\left( A^{-1} \right) _{2}^{3}T_{2}^{\cdot 2}+\left( A^{-1} \right) _{3}^{3}T_{2}^{\cdot 3} \right]\\
+	&+A_{2}^{3}\left[ \left( A^{-1} \right) _{1}^{3}T_{3}^{\cdot 1}+\left( A^{-1} \right) _{2}^{3}T_{3}^{\cdot 2}+\left( A^{-1} \right) _{3}^{3}T_{3}^{\cdot 3} \right]
+\end{align*}
+$\bb{T}$的混合分量以及底分量已经在例题2.6的解答中给出，矩阵$A$和$A^{-1}$的元素也在例题2.7的解答与讨论中给出。因此我们这里直接带入就好了
+\begin{align*}
+	\widetilde{T}_{21}&=2\cdot [1\cdot 4+1\cdot 8+(-1)(-4)]+1\cdot [1(-3)+2\cdot 1+(-1)(-6)]=53\\
+	\widetilde{T}_{2}^{\cdot 3}&=2\cdot \left[ -\frac{1}{2}\cdot 0+1\cdot 4+\frac{3}{2}\cdot 0 \right] +(1)\left[ -\frac{1}{2}\cdot 0+1\cdot 0+(-1)\frac{3}{2} \right] =\frac{13}{2}
+\end{align*}
+\end{solution}

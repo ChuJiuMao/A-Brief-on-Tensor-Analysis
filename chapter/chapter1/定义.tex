@@ -1,0 +1,43 @@
+\section{定义}
+我们说我们得到了一个二阶张量$\bb{T}$，意味着我们知道了张量$\bb{T}$对任意一个矢量$\bb{v}$的作用（即它转换后的结果）。因此，如果有两个二阶张量$\bb{S}$和$\bb{T}$对于任意一个矢量$\bb{v}$的作用是相同的，那么$\bb{S}$和$\bb{T}$就是相等的\footnote{$\bb{T}$对$\bb{v}$的作用记为$\bb{Tv}$，$\bb{T(v)}$或是简写成$\bb{T\cdot v}$对于严谨的数学家来说，如果不提及$\bb{T}$的定义域、$\bb{T}$作用的矢量集及其范围，即$\bb{T}$将这些矢量转换后形成的向量空间，$\bb{T}$的描述是不完整的。我们假设二阶张量的定义域和范围从上下文中是显而易见的，尽管它们一般是不同的；例如，转动惯量张量的定义域是角速度空间，但它的值域是转动动量空间（见习题 4.22）。}。更正式地说，
+\begin{equation}\label{equ:1.31}
+    \bb{S}=\bb{T}\Longleftrightarrow \bb{Sv}=\bb{Tv}\,\, ,  \forall \bb{v}
+\end{equation}
+或可等价为
+\begin{equation}\label{equ:1.32}
+    \bb{S}=\bb{T}\Longleftrightarrow \bb{u}\cdot \bb{Sv}=\bb{u}\cdot \bb{Tv}\,\, ,  \forall \bb{u},\bb{v}
+\end{equation}
+零张量与特征（单位）张量分别被定义为$\bb{Ov}=\bb{0},\forall\bb{v}$以及$\bb{1v}=\bb{v},\forall\bb{v}$。
+
+二阶张量$\bb{T}$的转置$\bb{T}^\mathrm{T}$被唯一定义，其满足
+\begin{equation}\label{equ:1.33}
+    \bb{u}\cdot \bb{Tv}=\bb{v}\cdot \bb{T}^{\mathrm{T}}\bb{u}\,\, ,  \forall \bb{u},\bb{v}
+\end{equation}
+我们说二阶张量$\bb{T}$是
+\begin{equation}\label{equ:1.34}
+    \begin{array}{l}
+        \left( a \right) \text{对称的，如果}\bb{T}=\bb{T}^{\mathrm{T}}\\
+        \left( b \right) \text{反称的（或反对称的），如果}\bb{T}=-\bb{T}^{\mathrm{T}}\\
+        \left( c \right) \text{奇异的，如果存在}\bb{v}\ne 0,\text{使得}\bb{Tv}=0
+    \end{array}
+\end{equation}
+任意一个张量$\bb{T}$都可以被分解为一个对称张量和一个反对称张量之和，如下所示
+\begin{equation}\label{equ:1.35}
+    \bb{T}=\frac{1}{2}\left( \bb{T}+\bb{T}^{\mathrm{T}} \right) +\frac{1}{2}\left( \bb{T}-\bb{T}^{\mathrm{T}} \right) 
+\end{equation}
+可知$\bb{T}+\bb{T}^{\mathrm{T}}=\left( \bb{T}+\bb{T}^{\mathrm{T}} \right) ^{\mathrm{T}}$是对称的，而$\bb{T}-\bb{T}^{\mathrm{T}}=-\left( \bb{T}-\bb{T}^{\mathrm{T}} \right) ^{\mathrm{T}}$是反对称的。
+
+\begin{example}
+    如果$\bb{v}\sim \left( v_x,v_y,v_z \right) $而$\bb{Tv}\sim \left( -2v_x+3v_z,-v_z,v_x+2v_y \right) $，请确定$\bb{T}^{\mathrm{T}}\bb{v}$的笛卡尔坐标。
+\end{example}
+\begin{solution}
+    设$\bb{T}^{\mathrm{T}}\bb{v}\sim \left( a,b,c \right) $并且$\bb{u}\sim \left( \alpha ,\beta ,\gamma \right) $。根据定义，对于任意矢量$\bb{u},\bb{v},\bb{u}\cdot \bb{T}^{\mathrm{T}}\bb{v}=\bb{v}\cdot \bb{Tu}$，因此
+    \begin{align*}
+        \alpha a+\beta b+\gamma c&=v_x\left( -2\alpha +3\gamma \right) +v_y\left( -\gamma \right) +v_z\left( \alpha +2\beta \right)\\
+        &=\alpha \left( -2v_x+v_z \right) +\beta \left( 2v_z \right) +\gamma \left( 3v_x-v_y \right)
+    \end{align*}
+    由于$\bb{u}$是任意的，因此上式两边$\alpha $、$\beta $和$\gamma$的系数必须一一对应。所以
+    \begin{equation*}
+        \bb{T}^{\mathrm{T}}\bb{v}\sim \left( -2v_x+v_z,2v_z,3v_x-v_y \right) 
+    \end{equation*}
+\end{solution}

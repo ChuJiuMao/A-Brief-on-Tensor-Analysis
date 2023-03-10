@@ -1,0 +1,107 @@
+\section{在一般基上计算叉积}
+有时，可以将$\bb{v}$的顶分量与底分量分别简记为$(\bb{v})^{i}$和$(\bb{v})^{j}$。用这种记号，我们有
+\begin{equation}\label{equ:2.11}
+    \bb{u}\times \bb{v}=\left( \bb{u}\times \bb{v} \right) _k\bb{g}^k
+\end{equation}
+为了计算$\bb{u}\times \bb{v}$的底分量，我们设$\bb{u}=u^{i}\bb{g}_i$，$\bb{v}=v^{j}\bb{v}_j$，可得
+\begin{align}
+	\left( \bb{u}\times \bb{v} \right) _k&=\left( \bb{u}\times \bb{v} \right) \cdot \bb{g}^k\nonumber\\
+	&=u^iv^j\left( \bb{g}_i\times \bb{g}_j \right) \cdot \bb{g}_k\nonumber\\
+	&=u^iv^j\epsilon _{ijk}\label{equ:2.12}
+\end{align}
+$3\times 3\times 3$的符号$\epsilon _{ijk}$被称作排列张量$\bb{P}$的底分量（见练习2.13）。让我们来探究一下它的性质。由式\eqref{equ:2.12}和式\eqref{equ:1.26}
+\begin{equation*}
+    \epsilon_{123}=(\bb{g}_{1}\times \bb{g}_{2})\cdot \bb{g}_{3}=J
+\end{equation*}
+其中，$J$表示Jacobi行列式。如果我们交换符号中的两个指标，例如，交换上式中的2和3
+\begin{equation*}
+    \epsilon _{132}=\left( \bb{g}_1\times \bb{g}_3 \right) \cdot \bb{g}_2=\left( \bb{g}_2\times \bb{g}_1 \right) \cdot \bb{g}_3=-\left( \bb{g}_1\times \bb{g}_2 \right) \cdot \bb{g}_3=-J
+\end{equation*}
+然后在此式中交换指标1和2
+\begin{equation*}
+    \epsilon _{231}=\left( \bb{g}_2\times \bb{g}_3 \right) \cdot \bb{g}_1=\left( \bb{g}_1\times \bb{g}_2 \right) \cdot \bb{g}_3=J
+\end{equation*}
+进一步地，若有两个及以上的指标相等，那么$\epsilon_{ijk}=0$，因为我们总可以通过交换相乘的顺序，使得三重标积的前一个括号是它与自己作叉积。
+
+总结一下就是
+\begin{equation}\label{equ:2.13}
+    \epsilon _{ijk}=\left\{ \begin{matrix}
+        \begin{array}{c}
+        +J\\
+        -J\\
+        0\\
+    \end{array}&		\begin{array}{l}
+        \text{若}\left( i,j,k \right) \text{为}\left( 1,2,3 \right) \text{的偶排列}\\
+        \text{若}\left( i,j,k \right) \text{为}\left( 1,2,3 \right) \text{的奇排列}\\
+        \text{若两个及以上指标相等}\\
+    \end{array}\\
+    \end{matrix} \right.  
+\end{equation}
+因此，回到式\eqref{equ:2.11}，我们有
+\begin{equation}\label{equ:2.14}
+    \bb{u}\times \bb{v}=\epsilon _{ijk}u^iv^j\bb{g}^k
+\end{equation}
+
+\begin{example}
+    已知$\bb{u}=2\bb{g}_1-\bb{g}_2+4\bb{g}_3$，$\bb{v}=2\bb{g}_1+3\bb{g}_2-\bb{g}_3$，其中基底$\{\bb{g}_{i}\}$由例题2.1给出，计算$\bb{u}\times \bb{v}$的底分量。
+\end{example}
+\begin{solution}
+    我们用式\eqref{equ:2.14}的形式将式\eqref{equ:2.12}当$k=1$时的展开式形式写出
+    \begin{align*}
+        \left( \bb{u}\times \bb{v} \right) _1=\epsilon _{ij1}u^iv^j&=\underset{0}{\underbrace{\epsilon _{111}}}u^1v^1+\underset{0}{\underbrace{\epsilon _{121}}}u^1v^2+\underset{0}{\underbrace{\epsilon _{131}}}u^1v^3\\
+        &+\underset{0}{\underbrace{\epsilon _{211}}}u^2v^1+\underset{0}{\underbrace{\epsilon _{221}}}u^2v^2+\underset{J}{\underbrace{\epsilon _{231}}}u^2v^3\\
+        &+\underset{0}{\underbrace{\epsilon _{311}}}u^3v^1+\underset{-J}{\underbrace{\epsilon _{321}}}u^3v^2+\underset{0}{\underbrace{\epsilon _{331}}}u^3v^3\\
+        &=J\left( u^2v^3-u^3v^2 \right)
+    \end{align*}
+    $\bb{u}$和$\bb{v}$的顶分量已经给出，由例题2.1可知
+    \begin{equation*}
+        J=\left| \begin{matrix}
+            1&		0&		-1\\
+            -1&		1&		-2\\
+            2&		1&		1\\
+        \end{matrix} \right|=6
+    \end{equation*}
+    因此
+    \begin{equation*}
+        \left( \bb{u}\times \bb{v} \right) _1=6\left[ \left( -1 \right) \left( -1 \right) -\left( 4 \right) \left( 3 \right) \right] =-66
+    \end{equation*}
+    类似地，我们可以给出$k=2$和$k=3$时的结果
+    \begin{align*}
+        \left( \bb{u}\times \bb{v} \right) _2&=J\left( u^3v^1-u^1v^3 \right) =6\left[ \left( 4 \right) \left( 2 \right) -\left( 2 \right) \left( -1 \right) \right] =60\\
+        \left( \bb{u}\times \bb{v} \right) _3&=J\left( u^1v^2-u^2v^1 \right) =6\left[ \left( 2 \right) \left( 3 \right) -\left( -1 \right) \left( 2 \right) \right] =48
+    \end{align*}
+\end{solution}
+
+为了计算$\bb{u}\times \bb{v}$的顶分量，我们可以仿造上面的过程，不过是将底基矢换做顶基矢。我们可以得到
+\begin{equation}\label{equ:2.15}
+    \left( \boldsymbol{u}\times \boldsymbol{v} \right) ^k=\epsilon ^{ijk}u_iv_j
+\end{equation}
+其中，$u_{i}$和$v_{j}$分别是$\bb{u}$和$\bb{v}$的底分量，$\epsilon^{ijk}$排列张量的顶分量，其定义如下：
+\begin{equation}\label{equ:2.16}
+    \epsilon ^{ijk}=\left( \boldsymbol{g}^i\times \boldsymbol{g}^j \right) \cdot \boldsymbol{g}^k=\left\{ \begin{matrix}
+        \begin{array}{c}
+        +J^{-1}\\
+        -J^{-1}\\
+        0\\
+    \end{array}&		\begin{array}{l}
+        \text{若}\left( i,j,k \right) \text{为}\left( 1,2,3 \right) \text{的偶排列}\\
+        \text{若}\left( i,j,k \right) \text{为}\left( 1,2,3 \right) \text{的奇排列}\\
+        \text{若两个及以上指标相等}\\
+    \end{array}\\
+    \end{matrix} \right.  
+\end{equation}
+换言之，$\epsilon ^{ijk}=J^2\epsilon _{ijk}$。
+
+下面是一个有趣的恒等式，它将排列张量的分量与Kronecker delta符号联系起来，其证明：可以在练习2.5完成：
+\begin{equation}\label{equ:2.17}
+    \epsilon ^{ijk}\epsilon _{pqr}=\left| \begin{matrix}
+        \delta _{p}^{i}&		\delta _{q}^{i}&		\delta _{r}^{i}\\
+        \delta _{p}^{j}&		\delta _{q}^{j}&		\delta _{r}^{j}\\
+        \delta _{p}^{k}&		\delta _{q}^{k}&		\delta _{r}^{k}\\
+    \end{matrix} \right|
+\end{equation}
+若我们展开行列式并令$r=k$，我们可以得到
+\begin{equation}\label{equ:2.18}
+    \epsilon ^{ijk}\epsilon _{pqk}=\delta _{p}^{i}\delta _{q}^{j}-\delta _{q}^{i}\delta _{p}^{j}
+\end{equation}
+它与三重矢积式\eqref{equ:1.22}密切相关。见练习2.7。

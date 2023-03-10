@@ -1,0 +1,34 @@
+\section{二阶张量的笛卡尔基}
+如果我们给定矢量$\bb{v}$的笛卡尔坐标$(v_x,v_y,v_z)$，那么我们可以依此写出矢量$\bb{v}=v_x\bf{e}_x+v_y\bf{e}_y+v_z\bf{e}_z$。那么给出二阶张量$\bb{T}$的笛卡尔坐标，能不能找到类似的形式来表示二阶张量$\bb{T}$呢？为了节省篇幅，我们姑且先在二维情况下回答这个问题。根据式\eqref{equ:1.36}到式\eqref{equ:1.38}
+\begin{equation}\label{equ:1.40}
+    \bb{Tv}=v_x\left( T_{xx}\bf{e}_x+T_{yx}\bf{e}_y \right) +v_y\left( T_{xy}\bf{e}_x+T_{yy}\bf{e}_y \right) 
+\end{equation}
+而$v_x\bf{e}_x=\left( \bb{v}\cdot \bf{e}_x \right) \bf{e}_x=\bf{e}_x\bf{e}_x(\bb{v})$，其余皆类此。因此
+\begin{equation}\label{equ:1.41}
+    \bb{Tv}=\left( T_{xx}\bf{e}_x\bf{e}_x+T_{xy}\bf{e}_x\bf{e}_y+T_{yx}\bf{e}_y\bf{e}_x+T_{yy}\bf{e}_y\bf{e}_y \right) \bb{v},\quad \forall \bb{v}
+\end{equation}
+由于$\bb{v}$是任意选取的，因此我们根据式\eqref{equ:1.31}可以得到
+\begin{equation}\label{equ:1.42}
+    \bb{T}=T_{xx}\bf{e}_x\bf{e}_x+T_{xy}\bf{e}_x\bf{e}_y+T_{yx}\bf{e}_y\bf{e}_x+T_{yy}\bf{e}_y\bf{e}_y
+\end{equation}
+这个表达是唯一吗？那是当然。可以假设有另一种表达式，可设为
+\begin{equation}\label{equ:1.43}
+    \bb{T}=T_{xx}^{\prime}\bf{e}_x\bf{e}_x+T_{xy}^{\prime}\bf{e}_x\bf{e}_y+T_{yx}^{\prime}\bf{e}_y\bf{e}_x+T_{yy}^{\prime}\bf{e}_y\bf{e}_y
+\end{equation}
+那么，用式\eqref{equ:1.42}减去式\eqref{equ:1.43}，我们可以得到
+\begin{equation}\label{equ:1.44}
+    \left[ \left( T_{xx}-T_{xx}^{\prime} \right) \bf{e}_x\bf{e}_x+\left( T_{xy}-T_{xy}^{\prime} \right) \bf{e}_x\bf{e}_y+\cdots \right] \bb{v}=0  ,\forall \bb{v}
+\end{equation}
+这等价于
+\begin{equation}\label{equ:1.45}
+    \bb{u}\cdot \left[ \left( T_{xx}-T_{xx}^{\prime} \right) \bf{e}_x\bf{e}_x+\left( T_{xy}-T_{xy}^{\prime} \right) \bf{e}_x\bf{e}_y+\cdots \right] \bb{v}=0  ,\forall \bb{u},\bb{v}
+\end{equation}
+而当$\bb{u}=\bb{v}=\bf{e}_x$，式\eqref{equ:1.45}可简化为$T_{xx}-T_{xx}^{\prime}=0$；当$\bb{u}=\bf{e}_x$，$\bb{v}=\bf{e}_y$，可得$T_{xy}-T_{xy}^{\prime}=0$，其余皆类此。因此式\eqref{equ:1.42}与式\eqref{equ:1.43}必然相等。
+
+在三维情况下，本节开始的问题的答案应当是
+\begin{align}
+	\bb{T}&=T_{xx}\bf{e}_x\bf{e}_x+T_{xy}\bf{e}_x\bf{e}_y+T_{xz}\bf{e}_x\bf{e}_z\nonumber\\
+	&+T_{yx}\bf{e}_y\bf{e}_x+T_{yy}\bf{e}_y\bf{e}_y+T_{yz}\bf{e}_y\bf{e}_z\nonumber\\
+	&+T_{zx}\bf{e}_z\bf{e}_x+T_{zy}\bf{e}_z\bf{e}_y+T_{zz}\bf{e}_z\bf{e}_z\label{equ:1.46}
+\end{align}
+因此，张量的3个笛卡尔基的9个直积的集合$\left\{ \bf{e}_x\bf{e}_x,\bf{e}_x\bf{e}_y,\dots ,\bf{e}_z\bf{e}_z \right\} $是所有二阶张量的基。也就是说，任何二阶张量都可以表示为这9个并矢的唯一线性组合。

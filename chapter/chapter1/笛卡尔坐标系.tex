@@ -1,0 +1,34 @@
+\section{笛卡尔坐标系}
+
+多亏了笛卡尔，我们可以如下文所示，用代数语言来描述三维欧几里德空间的特征。通过原点$O$绘制任意三条相互垂直（$\bot $）的线。将其中一条线称为$x$轴，并在其上放置一个点$I\ne 0$。从$O$开始包含$I$的射线（或称半线）称为正$x$轴。$\rr{OI}$称为沿$x$轴的单位箭头，我们用$\bf{e}_x$来表示。在余下的线中选择一条，将其称为$y$轴，并在其上放置一个点$J$，使得$\rr{OJ}$的长度等于$\rr{OI}$。$\rr{OJ}$称为$y$轴的单位箭头，我们用$\bf{e}_y$表示它的矢量。通过$O$的最后一条线称为$z$轴，通过任意采用右手法则，我们可以放置一个唯一点$K$在$z$轴上\footnote{这意味着如果我们将右手的手指从$\rr{OI}$向$\rr{OJ}$弯曲，那么我们的拇指将指向$\rr{OK}$的方向。}，使得$\rr{OK}$的长度等于$\rr{OI}$的长度。$\rr{OK}$是$z$单位箭头，$\bf{e}_z$表示其矢量。
+
+任何点$P$都可以用有序三元实数组$(x,y,z)$表示，称为$P$的笛卡尔坐标。第一个数字或$x$坐标是其与$yz$平面的垂直距离。因此，如果$P$与$I$位于$yz$平面的同一侧，则$x$为正；如果位于另一侧，则$x$为负；如果$P$位于$yz$平面内，则$x$为零。第二个和第三个坐标$y$和$z$以类似的方式定义。为了表示点$P$的坐标为$(x,y,z)$，我们有时会写成$P(x,y,z)$。
+
+当矢量$\bb{v}$由尾端为原点$O$的箭头表示时，则此箭头的首端坐标$(v_x,v_y,v_z)$称为$\bb{v}$的笛卡尔坐标，写作$\bb{v}\sim (v_x,v_y,v_z)$。因此，
+\begin{align}
+	\bf{e}_x\sim \left( 1,0,0 \right) ,\bf{e}_y\sim &\left( 0,1,0 \right) ,\bf{e}_z\sim \left( 0,0,1 \right)\label{equ:1.2}\\
+	\bb{x}\sim &\left( x,y,z \right)\label{equ:1.3}
+\end{align}
+有了将笛卡尔坐标$(v_x,v_y,v_z)$分配给矢量$\bb{v}$的方法，反之，我们可以很容易地推导出以下关系：
+\begin{enumerate}[(i)]
+    \item 根据勾股定理\footnote{这里我们从$E_3$的几何特性中推导出了$E_3$的代数特性。换句话说，在很多方面情况下，我们将$E_3$定义为所有有序三元实数组$(x,y,z)$的集合，问题会更简单，而任意两点$(x_1,y_1,z_1)$和 $(x_2,y_2,z_2)$之间的距离由下式给出
+    \begin{equation*}
+        \sqrt{\left( x_1-x_2 \right) ^2+\left( y_1-y_2 \right) ^2+\left( z_1-z_2 \right) ^2}
+    \end{equation*}
+    }
+    \begin{equation}\label{equ:1.4}
+        \left| \bb{v} \right|=\sqrt{v_{x}^{2}+v_{y}^{2}+x_{z}^{2}}
+    \end{equation}
+    \item 若$\alpha$为实数，则
+    \begin{equation}\label{equ:1.5}
+        \alpha \bb{v}\sim (\alpha v_x,\alpha v_y,\alpha v_z)
+    \end{equation}
+    \item 若$\bb{w}\sim \left( w_x,w_y,w_z \right) $，则
+    \begin{equation}\label{equ:1.6}
+        \bb{w}\pm \bb{v}\sim (w_x\pm v_x,w_y\pm v_y,w_z\pm v_z)
+    \end{equation}
+    \item 
+    \begin{equation}\label{equ:1.7}
+        \bb{v}=\bb{w}\Longleftrightarrow w_x=v_x,w_y=v_y,w_z=v_z
+    \end{equation}
+\end{enumerate}

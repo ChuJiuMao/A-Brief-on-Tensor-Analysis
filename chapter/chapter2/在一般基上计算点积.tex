@@ -1,0 +1,9 @@
+\section{在一般基上计算点积}
+假如我们要计算矢量$\bb{u}=u^i\bb{g}_i$与矢量$\bb{v}=v^i\bb{g}_i$的点积，我们就需要先改变其中一个矢量的指标，比如说第二个矢量的指标。否则，盲目使用求和约定会错误地得出$\bb{u}\cdot \bb{v}=u^iv^i\bb{g}_i\cdot \bb{g}_i=u^1v^1\bb{g}_1\cdot \bb{g}_1+u^2v^2\bb{g}_2\cdot \bb{g}_2+u^3v^3\bb{g}_3\cdot \bb{g}_3$。而正确的结果应该是
+\begin{align}
+	\bb{u}\cdot \bb{v}&=u^iv^j\bb{g}_i\cdot \bb{g}_j\nonumber\\
+	&=u^1v^1\bb{g}_1\cdot \bb{g}_1+u^1v^2\bb{g}_1\cdot \bb{g}_2+u^1v^3\bb{g}_1\cdot \bb{g}_3\nonumber\\
+	&+u^2v^1\bb{g}_2\cdot \bb{g}_1+u^2v^2\bb{g}_2\cdot \bb{g}_2+u^2v^3\bb{g}_2\cdot \bb{g}_3\nonumber\\
+	&+u^3v^1\bb{g}_3\cdot \bb{g}_1+u^3v^2\bb{g}_3\cdot \bb{g}_2+u^3v^3\bb{g}_3\cdot \bb{g}_3\label{equ:2.3}
+\end{align}
+这个$\bb{u}\cdot \bb{v}$的扩展表达式有九项，太乱了。我们可以通过引入一组倒易基矢量来简化它。

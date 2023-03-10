@@ -1,0 +1,48 @@
+\section{矢量的顶（逆变）分量与底（协变）分量}
+如果$\left\{ \bb{g}_i \right\} $是一组基底，那么我们不仅可以将任意一个矢量$\bb{v}$表示为$v^i\bb{g}_i$，我们也可以将它表示为倒易基矢量的线性组合，即
+\begin{equation}\label{equ:2.5}
+    \bb{v}=v_i\bb{g}^i
+\end{equation}
+为了打破传统，我们不妨称系数$v^i$为$\bb{v}$的顶（roof）分量，称$\bb{g}_i$为底（cellar）矢量\footnote{译者注：roof意为屋顶，cellar意为地窖。}。同理，在式\eqref{equ:2.5}中，$v_i$可以被称作$\bb{v}$的底分量，而称$\bb{g}^i$为顶矢量。$v^i$与$v_i$的简称分别是$\bb{v}$的逆变分量和协变分量——这名称在我看来既尴尬又毫无意义。“顶”和“底”在矩阵理论中也方便记忆，其中$A^i_j$有时用于表示矩阵$A$中位于第$ i $行第$ j $列的元素。下面的示意图说明了如何记住哪个是行索引，哪个是列索引：
+\begin{equation*}
+    A_{C\left( olunm \right)}^{R\left( ow \right)}\leftrightarrow A_{C}^{R}\leftrightarrow A_{C\left( ellar \right)}^{R\left( oof \right)}
+\end{equation*}
+
+\begin{example}
+    求例题2.1中给出的矢量$\bb{v}$的底分量。
+\end{example}
+\begin{solution}
+    将式\eqref{equ:2.5}写成展开式形式并应用式\eqref{equ:2.4}，我们有
+    \begin{align*}
+        \bb{v}\cdot \bb{g}_1&=\left( v_1\bb{g}^1+v_2\bb{g}^2+v_3\bb{g}^3 \right) \cdot \bb{g}_1\\
+        &=v_1\bb{g}^1\cdot \bb{g}_1+v_2\bb{g}^2\cdot \bb{g}_1+v_3\bb{g}^3\cdot \bb{g}_1\\
+        &=v_1
+    \end{align*}
+    根据例题2.1中给出的信息，$\bb{v}\cdot \bb{g}_1=\left( 3 \right) \left( 1 \right) +\left( 3 \right) \left( -1 \right) +\left( 6 \right) \left( 2 \right) =12$。同理
+    \begin{align*}
+        v_2&=\bb{v}\cdot \bb{g}_2=\left( 3 \right) \left( 0 \right) +\left( 3 \right) \left( 1 \right) +\left( 6 \right) \left( 1 \right) =9\\
+        v_3&=\bb{v}\cdot \bb{g}_3=\left( 3 \right) \left( -1 \right) +\left( 3 \right) \left( -2 \right) +\left( 6 \right) \left( 1 \right) =-3
+    \end{align*}
+\end{solution}
+
+例题2.3的解答说明了一个有用的结论：
+\begin{equation}
+    v_i=\bb{v}\cdot \bb{g}_i
+\end{equation}
+我们也希望以下结论成立
+\begin{equation}\label{equ:2.7}
+    v^i=\bb{v}\cdot \bb{g}^i
+\end{equation}
+为了练习Kronecker delta符号的运用，我们不妨从式\eqref{equ:2.2}和式\eqref{equ:2.4}开始推导出式\eqref{equ:2.7}，当然，我们不能用展开式形式（毕竟，创造张量符号就是为了压缩表达式）。对式\eqref{equ:2.2}两边取点积
+\begin{align}
+	\boldsymbol{v}\cdot \boldsymbol{g}^j&=\left( \boldsymbol{v}^i\boldsymbol{g}_i \right) \cdot \boldsymbol{g}^j\nonumber\\
+	&=\boldsymbol{v}^i\boldsymbol{g}^j\cdot \boldsymbol{g}_i\nonumber\\
+	&=\boldsymbol{v}^i\delta _{i}^{j}\nonumber\\
+	&=v^j\label{equ:2.8}
+\end{align}
+\qed
+
+让我们一行一行的来解释我们的推导过程。从第一行到第二行，我们用到了\linebreak$\left( \alpha \boldsymbol{u}+\beta \boldsymbol{v}+\cdots \right) \cdot \boldsymbol{w}=\alpha \boldsymbol{u}\cdot \boldsymbol{w}+\beta \boldsymbol{v}\cdot \boldsymbol{w}+\cdots $。从第二行到第三行，我们用到了式\eqref{equ:2.4}，虽然式\eqref{equ:2.4}是$\boldsymbol{g}^i\cdot \boldsymbol{g}_j$，但是由于我们指标只是一个代号而已，换成我们这里的$\boldsymbol{g}^j\cdot \boldsymbol{g}_i$得到的肯定还是这个结果。就像是我们如果有一个函数是$f\left( x,y \right) =x/y$，那么$x$与$y$交换得到的肯定就是$f\left( y,x \right) =y/x$。
+
+那么式\eqref{equ:2.8}最后一行是怎么得到的呢？考虑指标$j$在上一行中一个可能的取值，比如说2。然后，我们按照求和约定将指标$i$相同的项相加，就得到了$\boldsymbol{v}\cdot \boldsymbol{g}^2=v^1\delta _{1}^{2}+v^2\delta _{2}^{2}+v^3\delta _{3}^{2}$。但是$\delta _{1}^{2}=\delta _{3}^{2}=0$而$\delta^{2}_{2}=0$。因此这列求和实际上只剩下$v^2$。从式\eqref{equ:2.8}倒数第二行到倒数第一行的推导，我们可以看出Kronecker delta符号可以被看做一个替换算符。也就是说，用$\delta^{i}_{j}$乘以$v^{i}$可以直接将$v$上面的指标$i$替换成$j$。最后，需要注意的是，$\boldsymbol{v}\cdot \boldsymbol{g}^j=v^j$与$v^i=\boldsymbol{v}\cdot \boldsymbol{g}^i$是等价的，就像$f\left( x \right) =x^2$和$z^2=f\left( z \right) $等价一样。
+

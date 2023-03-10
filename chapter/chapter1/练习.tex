@@ -1,0 +1,233 @@
+\begin{exercise}
+    \item \begin{enumerate}
+        \item 用坐标纸绘出下列五个矢量
+        \begin{equation*}
+            \bb{p}\sim \left( 1,1 \right) ,\bb{q}\sim \left( 1,2 \right) ,\bb{r}\sim \left( 2,1 \right) ,\bb{s}\sim \left( 0,-3 \right) ,\bb{t}\sim \left( -1,1 \right) 
+        \end{equation*}
+        使它们的尾端均在原点。
+        \item 利用坐标纸和矢量加法的三角形法则，将$\bb{q}$的尾端置于$\bb{p}$的首端，然后将$\bb{r}$的尾端置于$\bb{q}$的首端，继续，直到 (a) 中的5个矢量都放置完成，最后将这5个矢量的合矢量表示为尾端与$\bb{p}$的尾端重合，首端与$\bb{t}$的首端重合的矢量。
+        \item 若矢量$\bb{u}$使得$\bb{p}+\bb{q}+\cdots +\bb{t}+\bb{u}=0$成立，请求出$\bb{u}$的笛卡尔坐标。
+    \end{enumerate}
+    \begin{figure}[htbp]
+        \centering
+        \begin{tikzpicture}[scale=0.4]
+            \foreach \x in {0,1,2,...,12}
+                {
+                    \draw (\x,0)--(\x,12);
+                }
+            \foreach \y in {0,1,2,...,12}
+                {
+                    \draw (0,\y)--(12,\y);
+                }
+            \draw(0,0)--(12,0)--(12,12)--(0,12)--cycle;
+        \end{tikzpicture}
+        \hspace{1cm}
+        \begin{tikzpicture}[scale=0.4]
+            \foreach \x in {0,1,2,...,12}
+                {
+                    \draw (\x,0)--(\x,12);
+                }
+            \foreach \y in {0,1,2,...,12}
+                {
+                    \draw (0,\y)--(12,\y);
+                }
+            \draw(0,0)--(12,0)--(12,12)--(0,12)--cycle;
+        \end{tikzpicture}
+    \end{figure}
+    \item 仔细地画一个草图，说明如果按照平行四边形法则将$\bb{u}$与$\bb{v}$相加，然后让$(\bb{u}+\bb{v})$与$\bb{w}$相加，最终得到的将是一个以$(\bb{u}$、$\bb{v})$和$\bb{w}$为边线的平行六面体的对角线。
+    \item 用文字和草图设计一个实验，说明力的叠加满足矢量加法运算法则。
+    \item 若$\bb{u}\sim (2,-3,4)$，$\bb{v}\sim (1,0,1)$，计算$\bb{u}\cdot \bb{v}$的值与它们之间的夹角。
+    \item 计算例题1.4中出现的矢量的$\mathrm{Proj}_u\bb{v}$和$\mathrm{Proj}_v\bb{u}$。
+    \item 华盛顿特区大致位于北纬39°和西经77°，莫斯科特区大致位于北纬56°和东经38°。取地球的半径为4000英里(miles)，计算出这两个城市之间的圆弧距离。
+    
+    提示：想象一下从地球中心到城市的矢量，并使用点积。
+    \item 利用式\eqref{equ:1.11}，在不引入笛卡尔坐标的前提下证明：矢量加法的分配律。
+    
+    提示：如果$\bb{a}$和$\bb{b}$是一个平行四边形的共端边，那么$2\left| \bb{a} \right|^2+2\left| \bb{b} \right|^2=\left| \bb{a}+\bb{b} \right|^2+\left| \bb{a}-\bb{b} \right|^2$。将式\eqref{equ:1.11}应用于$\bb{u}\cdot \left( \bb{v}+\bb{w} \right) $，并在结果表达式中设$\bb{v}+\bb{w}-\bb{u}=\left( \bb{v}-\frac{1}{2}\bb{u} \right) +\left( \bb{w}-\frac{1}{2}\bb{u} \right) =\bb{a}+\bb{b}$。
+    \item Schwarz不等式
+    \begin{equation}\label{equ:1.8*}
+        \left| \bb{u}\cdot \bb{v} \right|\le \left| \bb{u} \right|\left| \bb{v} \right|\tag{*}
+    \end{equation}
+    是一个简单的几何定理的例子，它对于函数也有一个类似的有用结论：若函数$f$和$g$在区间$(a,b)$内平方可积，那么
+    \begin{equation}\label{equ:1.8**}
+         \left| \int_a^b{f\cdot g\mathrm{d}x} \right|\le \sqrt{\int_a^b{f^2\mathrm{d}x}}\sqrt{\int_a^b{g^2\mathrm{d}x}}\tag{**}
+    \end{equation}
+    \begin{enumerate}
+        \item 用三种方法证明：式\eqref{equ:1.8*}：
+            \begin{enumerate}[(i)]
+                \item 利用式\eqref{equ:1.25}和定理
+                \begin{equation*}
+                    \left| \bb{u}\times \bb{v} \right|^2\ge 0
+                \end{equation*}
+                \item 利用定理：对于任意$x\in \mathbb{R} $二次多项式
+                \begin{equation*}
+                    p\left( x \right) =\left| \bb{u}+x\bb{v} \right|^2
+                \end{equation*}
+                非负。
+                \item 利用式\eqref{equ:1.11}和欧式几何中的定理：三角形中，两边之差小于等于第三边。
+            \end{enumerate}
+        \item 利用与(i)和(ii)类似的方法证明：式\eqref{equ:1.8**}。
+    \end{enumerate}
+    \item 设$\bb{a}$、$\bb{b}$表示已知的三维矢量，而$\bb{x}$未知。不引入分量，证明：线性代数方程
+    \begin{equation}\label{equ:1.9 *}
+        \bb{x}+\bb{a}\times \bb{x}=\bb{b}\tag{*}
+    \end{equation}
+    的唯一解是
+    \begin{equation*}
+        \bb{x}=\frac{\bb{b}+\left( \bb{a}\cdot \bb{b} \right) \bb{a}+\bb{b}\times \bb{a}}{1+\bb{a}\cdot \bb{a}}
+    \end{equation*}
+
+    提示：设$\bb{x}=A\bb{a}+B\bb{b}+C\bb{a}\times \bb{b}$，然后求出系数$A,B,C$。为了证明：解的唯一性，可以设$\bb{y}$为方程\eqref{equ:1.9 *}的另一个解，然后证明：
+    \begin{equation*}
+        \bb{x}-\bb{y}+\bb{a}\times \left( \bb{x}-\bb{y} \right) =0
+    \end{equation*}
+    那么，你能从唯一性中总结出什么呢？
+    \item 若$\bb{a}\sim (-2,1,0)$，$\bb{b}\sim (3,2,1)$，
+    \begin{enumerate}
+        \item 计算$\bb{a}\times \bb{b}$
+        \item 写出$\bb{a}$、$\bb{b}$所确定的平面的方程。
+    \end{enumerate}
+    \item 给定点$P(x_0,y_0,z_0)$和平面
+    \begin{equation}\label{equ:1.11*}
+        \Pi :Ax+By+Cz=D\tag{*}
+    \end{equation}
+    利用以下方法推导从$P$到$\Pi $的（最短）距离公式：
+    \begin{enumerate}
+        \item 利用微积分，计算平面\eqref{equ:1.11*}上$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2$的条件极小值
+        \item 利用矢量方法构造$a$由$P$到$\Pi$且垂直于$\Pi$。
+        
+        提示：请回忆$\bb{N}\sim (A,B,C)$的含义。
+    \end{enumerate}
+    \item 若$\bb{u}\sim (1,-1,2),\bb{v}\sim (3,2,1),\bb{w}\sim (4,1,7)$，请计算
+    \begin{enumerate}
+        \item $\bb{uv}(\bb{w})$
+        \item $\bb{vu}(\bb{w})$
+        \item $\bb{wu}(\bb{u})$
+    \end{enumerate}
+    \item 证明：
+    \begin{enumerate}
+        \item $(\bb{uv})^{\mathrm{T}}=\bb{vu}$
+        \item 对于任意矢量$\bb{a},\bb{b},\bb{c}$，$(\bb{a}\times\bb{b})\times \bb{c}=(\bb{ba}-\bb{ab})(\bb{c})$
+    \end{enumerate}
+    \item 利用微积分或是几何方法（这里用物理模型很方便）证明：由$\bb{u},\bb{v},\bb{w}$作为共端边的四面体的体积是$\frac{1}{6}\left| \left( \boldsymbol{u}\times \boldsymbol{v} \right) \cdot \boldsymbol{w} \right|$。
+    \item 给出一个可信（尽管可能不甚严谨）的证明：，说明由$\bb{u},\bb{v}$作为共端边的平行四边形，在垂直于$\bb{w}$的平面上的投影面积为$\left| \left( \boldsymbol{u}\times \boldsymbol{v} \right) \cdot \overline{\boldsymbol{w}} \right|$。
+    \item 证明：在三维空间中\label{exercise:1.16}
+    \begin{equation*}
+        \boldsymbol{u}=\boldsymbol{v}\Longleftrightarrow \boldsymbol{u}\times \boldsymbol{c}=\boldsymbol{v}\times \boldsymbol{c}\,\, ,\forall \boldsymbol{c}
+    \end{equation*}
+    \item 取$\bb{T}$为例题1.4中定义的矢量\label{exercise:1.17}
+    \begin{enumerate}
+        \item 若$\bb{v}\sim (v_x,v_y,v_z)$，填空：
+        
+        $\boldsymbol{Sv}=\frac{1}{2}\left( \boldsymbol{T}+\boldsymbol{T}^{\mathrm{T}} \right) \boldsymbol{v}\sim \left( \_\_,\_\_,\_\_ \right) $
+
+        $\boldsymbol{Av}=\frac{1}{2}\left( \boldsymbol{T}-\boldsymbol{T}^{\mathrm{T}} \right) \boldsymbol{v}\sim \left( \_\_,\_\_,\_\_ \right) $
+        \item 写出$\bb{S}$和$\bb{A}$的笛卡尔坐标矩阵。
+        \item 写出矢量$\bb{\omega}$的笛卡尔坐标，使得$\bb{A}=\bb{\omega}\times$。
+    \end{enumerate}
+    \item 设$\bb{A}$表示任意三维反对称张量
+    \begin{enumerate}
+        \item 用笛卡尔坐标表示$\bb{A}$（注意，由于$\bb{A}=-\bb{A}^{\mathrm{T}}$，仅有三个分量是任意的），找出一个矢量$\bb{\omega }$使得
+        \begin{equation*}
+            \boldsymbol{Av}=\boldsymbol{\omega }\times \boldsymbol{v}\,\, ,\forall \boldsymbol{v}
+        \end{equation*}
+        \item 用练习\ref{exercise:1.16}的结果证明：$\bb{\omega }$唯一。$\omega $被称作$\bb{A}$的转轴，它在刚体动力学中很重要。见练习4.20。
+        \item 证明：$\bb{v}\cdot \bb{Av}=0$吗，其中$\bb{v}$为任意$n$维矢量。
+        \item 证明：$\bb{A\omega}=0$，并用练习1.\ref{exercise:1.17}(c)中得到的数值检验它。
+    \end{enumerate}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.65\textwidth]{./image/1.9.png}
+        \caption{}
+        \label{fig:1.9}
+    \end{figure}
+
+    \item 用$\rho $和$\bb{v}$分别表示$t$时刻空间中某点$P$处流体的密度和流速。若$\Pi $表示法线$n$过$P$点的平面，那么$t$时刻在$P$点处穿过$\Pi$的动量通量定义为$\rho \boldsymbol{v}\left( \boldsymbol{v}\cdot \widehat{\boldsymbol{n}} \right) =\rho \boldsymbol{vv}\left( \widehat{\boldsymbol{n}} \right) $。如图\ref{fig:1.9}所示，$\rho \boldsymbol{v}\left( \boldsymbol{v}\cdot \widehat{\boldsymbol{n}} \right) \mathrm{d}A\mathrm{d}t$表示$t$时刻$P$点处在$\mathrm{d}t$时间内穿过面元$\widehat{\boldsymbol{n}}\mathrm{d}A$的有向微元。$\rho \boldsymbol{vv}$被称作$t$时刻$P$点处动量流密度张量（或者叫它动量通量张量）。
+    \begin{enumerate}
+        \item 若$\bb{v}\sim (v_x,v_y,v_z)$，写出$\rho \boldsymbol{vv}$的笛卡尔坐标。
+        \item 若给定时空点处$\bb{v}\sim (3,-1,2)$，$\rho =4$，写出穿过法矢为$\boldsymbol{n}\sim \left( -1,1,3 \right) $的平面的动量通量。
+    \end{enumerate}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.35\textwidth]{./image/1.10.png}
+        \caption{}
+        \label{fig:1.10}
+    \end{figure}
+
+    \item 如图\ref{fig:1.10}所示，设$\widehat{\boldsymbol{n}}\mathrm{d}A$表示$t$时刻$P$点处连续介质（例如，流体或是固体）中的有向面元，设$\boldsymbol{t}\mathrm{d}A$表示材料施加于面元$\mathrm{d}A$的$\bb{n}$方向的力。$\bb{t}$被称作$t$时刻$P$点处$\widehat{\boldsymbol{n}}$方向的应力；$\boldsymbol{t}_n=\mathrm{Proj}_n\boldsymbol{t}$被称作法向应力，而$\boldsymbol{t}_s=\boldsymbol{t}-\boldsymbol{t}_n$被称作剪应力。通过考察以$P$点为中心的任意小四面体的瞬时运动方程，我们可以证明：$\boldsymbol{t}=\boldsymbol{T}\widehat{\boldsymbol{n}}$，其中$\boldsymbol{T}=\boldsymbol{T}^{\mathrm{T}}$为$t$时刻$P$点处的（柯西）应力张量\footnote{所有单位向量的集合不是线性向量空间（为什么？），因此它不是$\bb{T}$合适的定义域。然而，应力张量的定义和定义域可以用一种清晰的方式延拓，正如Noll所说，$\boldsymbol{T}\bf{0}=\bf{0},\boldsymbol{Tv}=\left| \boldsymbol{v} \right|\boldsymbol{T}\widehat{\boldsymbol{v}}\,\, ,\forall \boldsymbol{v}\ne \bf{0}$。}。若
+    \begin{equation*}
+        \boldsymbol{T}\sim \left[ \begin{matrix}
+            1&		0&		0\\
+            0&		3&		1\\
+            0&		-1&		3\\
+        \end{matrix} \right] 
+    \end{equation*}
+    并且$\bb{n}\sim (1,2,-1)$，计算法向应力以及剪应力。
+    \item 主应力的方向定义为与单位矢量$\bb{x}$的方向相同，其满足$\bb{Tx}=\lambda\bb{x}$。注意，$\lambda\bb{x}$仅表示主应力，其剪应力在主方向上为零。确定$\lambda$所有可能的取值和$\bb{x}$的关联方向方向的问题被称作特征值问题。你可能已经在线性代数中看过这种问题。求出上一题中应力张量$\bb{T}$的特征值$\lambda$和关联方向$\bb{x}$。
+    \item \begin{enumerate}
+        \item 确定直积$\bb{uv},\bb{uw}$和$\bb{vw}$的笛卡尔坐标矩阵，其中$\bb{u,v}$和$\bb{w}$由练习1.12给出。
+        \item 计算$\det(\bb{uv}),\det(\bb{uw})$和$\det(\bb{vw})$
+        \item 证明：任意两个矢量直积的行列式等于零。
+    \end{enumerate}
+    \item 直积的迹被定义为
+    \begin{equation*}
+        \mathrm{tr}\left( \boldsymbol{uv} \right) =\boldsymbol{u}\cdot \boldsymbol{v}\,\, , \,\, \mathrm{tr}\left( \boldsymbol{uv}+\boldsymbol{wx} \right) =\mathrm{tr}\left( \boldsymbol{uv} \right) +\mathrm{tr}\left( \boldsymbol{wx} \right) 
+    \end{equation*}
+    根据定义和式\eqref{equ:1.46}，计算$\tr \bb{T}$的笛卡尔坐标表达式。
+    \item 张量$\bb{T}$的特征值，决定于单一参量$t$，可以由此定义
+    \begin{equation}
+        \dot{\boldsymbol{T}}\boldsymbol{a}=\left( \boldsymbol{Ta} \right) ^{\cdot}
+    \end{equation}
+    \begin{enumerate}
+        \item 根据定义，$\bb{T}$将一个矢量转换成另一个矢量。证明：$\dot{T}$是线性的，也因此是一个二阶张量。
+        \item 若$\bb{v}\sim (v_X,v_y,v_z)$，其中$\bb{v}$由$t$决定，并且$\bb{Tv}\sim ( -2t^2v_x+3t^2v_z , \cos \pi tv_z ,$$ v_x+2tv_y+\sqrt{1+t^2}v_z ) $，请填空：$\dot{\boldsymbol{T}}\boldsymbol{v}\sim \left( \_\_\_,\_\_\_,\_\_\_ \right) $
+        \item 若$\bb{T}=\bb{xy}$，其中$\bb{x}$和$\bb{y}$是参数$t$的函数，$\dot{\bb{T}}$是？
+        \item 如果给出$\bb{T}$的笛卡尔坐标，我们如何得到$\dot{\bb{T}}$？
+    \end{enumerate}
+    \item 两个二阶张量$\bb{S}$和$\bb{T}$的分量或点积也是一个二阶张量，可记作$\bb{S}\cdot \bb{T}$，其定义为
+    \begin{equation*}
+        \boldsymbol{S}\cdot \boldsymbol{Tv}=\boldsymbol{S}\left( \boldsymbol{Tv} \right) \,\, \forall \,\,\boldsymbol{v}
+    \end{equation*}
+    \begin{enumerate}
+        \item 若$\bb{S}=\bb{wx}$，$\bb{T}=\bb{yz}$，求$\bb{S}\cdot \bb{T}$。
+        \item 若$\bb{S}$和$\bb{T}$是关于$t$的可微函数，证明：
+        \begin{equation}
+            \left( \boldsymbol{S}\cdot \boldsymbol{T} \right) ^{\cdot}=\boldsymbol{S}\cdot \dot{\boldsymbol{T}}+\dot{\boldsymbol{S}}\cdot \boldsymbol{T}
+        \end{equation}
+    \end{enumerate}
+    \item 参考练习1.18a并利用式\eqref{equ:1.22}，证明：
+    \begin{equation}\label{equ:1.49}
+        \left( \bb{\omega } \times \right) ^2=\bb{\omega } \times \left( \bb{\omega } \times \right) =\boldsymbol{A}^2=\bb{\omega } \bb{\omega } -\left( \bb{\omega } \cdot \bb{\omega } \right) \bb{1}
+    \end{equation}
+    同时由此可以得到
+    \begin{equation*}
+        \left| \boldsymbol{\omega } \right|^2=-\frac{1}{2}\tr \boldsymbol{A}^2
+    \end{equation*}
+    \item 二阶张量的逆。如果函数$f$满足$f\left( x_1 \right) =f\left( x_2 \right) \Rightarrow x_1=x_2$，那么我们称其为单射。此时，对于任意$x$属于$f$的定义域，函数$f$有唯一的反函数$f^{-1}$，其满足$f^{-1}\left( f\left( x \right) \right) =x$。进一步地，对于任意$y$属于$f$的值域，$f\left( f^{-1}\left( y \right) \right) =y$。若$\bb{T}$是二阶张量，那么由张量的线性性可知$\boldsymbol{Tv}_1=\boldsymbol{Tv}_2$蕴含$\boldsymbol{T}\left( \boldsymbol{v}_1-\boldsymbol{v}_2 \right) =0$。若$\bb{T}$是非奇异的，那么反过来，这意味着$\bb{v}_1=\bb{v}_2$。因此，$\bb{T}$有唯一的逆$\bb{T}^{-1}$使得
+    \begin{equation}
+        \begin{aligned}
+            \boldsymbol{T}^{-1}\cdot \boldsymbol{Tv}&=\boldsymbol{v}\,\, ,  \forall \boldsymbol{v}\\
+            \boldsymbol{T}\cdot \boldsymbol{T}^{-1}\boldsymbol{w}&=\boldsymbol{w}\,\, ,  \forall \boldsymbol{w}
+        \end{aligned}
+    \end{equation}
+    \begin{enumerate}
+        \item 证明：$\bb{T}^{-1}$是线性的（并且因此是一个二阶张量）
+        \item 证明：$\left( \boldsymbol{T}^{-1} \right) ^{\mathrm{T}}=\left( \boldsymbol{T}^{\mathrm{T}} \right) ^{-1}$。
+        \item 证明：例题1.4中的张量是非奇异的。
+        \item 若$\boldsymbol{w}\sim \left( w_x,w_y,w_z \right) $而$\bb{T}$是例题1.4中的张量，填空：$\boldsymbol{T}^{-1}\boldsymbol{w}\sim \left( \_\_,\_\_,\_\_ \right) $。
+        
+        提示：设$\boldsymbol{T}^{-1}\boldsymbol{w}\sim \left( a,b,c \right) $，并注意$\bb{T}$作用于$\bb{T}^{-1}\bb{w}$必须等于$\bb{w}$。
+    \end{enumerate}
+    \item 我们说二阶张量$\bb{T}$是正定的，如果
+    \begin{equation*}
+        \begin{matrix}
+            \boldsymbol{x}\cdot \boldsymbol{Tx}>0&		\forall \boldsymbol{x}\ne \bf{0}
+        \end{matrix}
+    \end{equation*}
+    \begin{enumerate}
+        \item 证明：若$\bb{T}$是正定的，那么$T$所有的特征值都是正的。
+        \item 证明：若$\bb{T}$是非奇异的，那么$\boldsymbol{T}^{\mathrm{T}}\cdot \boldsymbol{T}$是正定的。
+    \end{enumerate}
+\end{exercise}

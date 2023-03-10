@@ -1,0 +1,115 @@
+\section{二阶张量在一般基上有四组分量}
+给定一个二阶张量$\bb{T}$和一组一般基$\{\bb{g}_{j}\}$，$\bb{T}$对每一个基矢量的作用已知，为
+\begin{equation}\label{equ:2.19}
+    \boldsymbol{Tg}_j=\boldsymbol{T}_j
+\end{equation}
+现在，每一个矢量$\bb{T}_{j}$都可以被表述为给定的基矢量或它们的倒易基矢量的线性组合。我们选用后者，可以写作
+\begin{equation}\label{equ:2.20}
+    \boldsymbol{T}_j=T_{ij}\boldsymbol{g}^i
+\end{equation}
+9个系数$T_{ij}$被称作$\bb{T}$的底分量。明确来说，就是
+\begin{equation}\label{equ:2.21}
+    T_{ij}=\boldsymbol{g}_i\cdot \boldsymbol{Tg}_j
+\end{equation}
+为了用其分量来表述$\bb{T}$，我们可以仿造第一章我们的处理方式来处理它。因此，若$\bb{v}$是任意一个矢量
+\begin{align}
+	\boldsymbol{Tv}&=\boldsymbol{T}\left( v^j\boldsymbol{g}_j \right) &&\text{将}\boldsymbol{v}\text{在基底}\boldsymbol{g}_j\text{上展开}\nonumber\\
+	&=v^j\boldsymbol{Tg}_j&&\text{因为}\boldsymbol{T}\text{是线性的}\nonumber\\
+	&=v^j\boldsymbol{T}_{ij}\boldsymbol{g}^i&&\text{根据式\eqref{equ:2.19}和式\eqref{equ:2.20}}\nonumber\\
+	&=\boldsymbol{T}_{ij}\boldsymbol{g}^i\left( \boldsymbol{g}^j\cdot \boldsymbol{v} \right) &&\text{根据式\eqref{equ:2.7}}\nonumber\\
+	&=\boldsymbol{T}_{ij}\boldsymbol{g}^i\boldsymbol{g}^j\left( \boldsymbol{v} \right) &&\text{根据式\eqref{equ:1.29}}\label{equ:2.22}
+\end{align}
+由于$\bb{v}$具有任意性，因此式\eqref{equ:2.22}表明
+\begin{equation}
+    \boldsymbol{T}=T_{ij}\boldsymbol{g}^i\boldsymbol{g}^j
+\end{equation}
+并且我们可以知道$\{\bb{g}_{i}\bb{g}_{j}\}$是全体二阶张量的一个基底。
+
+重复上述推导过程，但是颠倒底基矢量和顶基矢量的位置，我们可以得到
+\begin{equation}
+    \boldsymbol{Tg}^j=\boldsymbol{T}^j=\boldsymbol{T}^{ij}\boldsymbol{g}_i\,\, ,  \boldsymbol{T}=T^{ij}\boldsymbol{g}_i\boldsymbol{g}_j
+\end{equation}
+9个系数$T^{ij}$被称作$\bb{T}$的顶分量。换言之，$T^{ij}$是$\bb{T}$在基底$\{\bb{g}_{i}\bb{g}_{j}\}$上的分量。类似于式\eqref{equ:2.21}有
+\begin{equation}
+    T^{ij}=\boldsymbol{g}^j\cdot \boldsymbol{Tg}^j
+\end{equation}
+聪明的读者可能已经意识到了，我们另外还可以定义两组分量，即
+\begin{equation}
+    T_{\cdot j}^{i}=\boldsymbol{g}^j\cdot \boldsymbol{Tg}_j
+\end{equation}
+和
+\begin{equation}
+    T_{j}^{\cdot i}=\boldsymbol{g}_j\cdot \boldsymbol{Tg}^i
+\end{equation}
+这两个被称作$\bb{T}$的混合分量。其中的点用于区分，因为通常来说$T^{i}_{\cdot j}\ne T^{\cdot i}_{j}$。易知$\bb{T}$在混合分量上有如下表达式：
+\begin{equation}
+    \boldsymbol{T}=T_{\cdot j}^{i}\boldsymbol{g}_i\boldsymbol{g}^j=T_{j}^{\cdot i}\boldsymbol{g}^j\boldsymbol{g}_i
+\end{equation}
+换言之，$T_{\cdot j}^{i}$是$\bb{T}$在基底$\{\boldsymbol{g}_i\boldsymbol{g}^j\}$上的分量，$T_{j}^{\cdot i}$是$\bb{T}$在基底$\{\boldsymbol{g}^j\boldsymbol{g}_i\}$上的分量。
+
+如果$\bb{T}$是对称的，那么$T_{ij}=\boldsymbol{g}_i\cdot \boldsymbol{Tg}_j=\boldsymbol{g}_j\cdot \boldsymbol{T}^T\boldsymbol{g}_i=\boldsymbol{g}_j\cdot \boldsymbol{Tg}_i=T_{ji}$。同时，$T_{\cdot j}^{i}=T_{j}^{\cdot i}$.然而，我们无法从$\bb{T}=\bb{T}^{\mathrm{T}}$推出矩阵$\left[ T_{\cdot j}^{i} \right] $和$\left[ T_{j}^{\cdot i} \right] $是对称的。见练习2.23。
+
+\begin{example}
+    使用例题2.1中给出的基矢量和例题2.2解答中给出的倒易基矢量计算例题1.4中给出的张量的底、顶以及混合分量。
+\end{example}
+\begin{solution}
+    我们有
+    \begin{equation*}
+        \boldsymbol{Tv}\sim \left( -2v_x+3v_z,-v_z,v_x+2v_y \right) 
+    \end{equation*}
+    以及
+    \begin{equation*}
+        \boldsymbol{g}_1\sim \left( 1,-1,2 \right) ,\boldsymbol{g}_2\sim \left( 0,1,1 \right) ,\boldsymbol{g}_3\sim \left( -1,-2,1 \right) 
+    \end{equation*}
+    因此
+    \begin{equation*}
+        \boldsymbol{Tg}_1\sim \left( 4,-2,-1 \right) ,\boldsymbol{Tg}_2\sim \left( 3,-1,2 \right) ,\boldsymbol{Tg}_3\sim \left( 5,-1,-5 \right) 
+    \end{equation*}
+    并且
+    \begin{equation*}
+        \left[ T_{ij} \right] =\left[ \boldsymbol{g}_i\cdot \boldsymbol{Tg}_j \right] =\left[ \begin{matrix}
+            \boldsymbol{g}_1\cdot \boldsymbol{Tg}_1&		\boldsymbol{g}_1\cdot \boldsymbol{Tg}_2&		\cdot\\
+            \boldsymbol{g}_2\cdot \boldsymbol{Tg}_1&		\cdot&		\cdot\\
+            \cdot&		\cdot&		\cdot\\
+        \end{matrix} \right] \left[ \begin{matrix}
+            4&		8&		-4\\
+            -3&		1&		-6\\
+            -1&		1&		-8\\
+        \end{matrix} \right] 
+    \end{equation*}
+    由例题2.2可知
+    \begin{equation*}
+        \boldsymbol{g}^1\sim \frac{1}{6}(3,-1,1),\boldsymbol{g}^2\sim \frac{1}{2}(-1,1,1),\boldsymbol{g}^3\sim \frac{1}{6}(-3,-1,1)
+    \end{equation*}
+    因此
+    \begin{equation*}
+        \left[ T_{\cdot j}^{i} \right] =\left[ \boldsymbol{g}^i\cdot \boldsymbol{Tg}_j \right] =\left[ \begin{matrix}
+            \boldsymbol{g}^1\cdot \boldsymbol{Tg}_1&		\boldsymbol{g}^1\cdot \boldsymbol{T}g_2&		\cdot\\
+            \boldsymbol{g}^2\cdot \boldsymbol{Tg}_1&		\cdot&		\cdot\\
+            \cdot&		\cdot&		\cdot\\
+        \end{matrix} \right] =\frac{1}{6}\left[ \begin{matrix}{r}
+            13&		12&		11\\
+            -21&		-6&		-33\\
+            -11&		-6&		-19\\
+        \end{matrix} \right] 
+    \end{equation*}
+    最终我们有
+    \begin{equation*}
+        \boldsymbol{Tg}^1\sim \frac{1}{6}\left( -3,-1,1 \right) ,\boldsymbol{Tg}^2\sim \frac{1}{2}\left( 5,-1,1 \right) ,\boldsymbol{Tg}^3\sim \frac{1}{6}\left( 9,-1,-5 \right) 
+    \end{equation*}
+    从而
+    \begin{equation*}
+        \left[ T_{j}^{\cdot i} \right] =\left[ \boldsymbol{g}_j\cdot \boldsymbol{Tg}^i \right] =\left[ \begin{matrix}
+            0&		0&		1\\
+            4&		0&		-1\\
+            0&		-1&		-2\\
+        \end{matrix} \right] 
+    \end{equation*}
+    \begin{equation*}
+        \left[ T^{ij} \right] =\left[ \boldsymbol{g}^i\cdot \boldsymbol{Tg}^j \right] =\frac{1}{36}\left[ \begin{matrix}
+            -7&		51&		23\\
+            9&		-45&		-45\\
+            11&		-39&		-31\\
+        \end{matrix} \right] 
+    \end{equation*}
+\end{solution}
